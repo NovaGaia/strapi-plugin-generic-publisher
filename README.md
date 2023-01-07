@@ -29,6 +29,8 @@ yarn add nova-publisher
 
 ### b. Configuration
 
+#### I. plugins.js
+
 The configuration is done in the environment variables and in the plugin configuration.
 
 > Here there are two instances configured, but you can add more or put only one.
@@ -103,6 +105,21 @@ module.exports = ({ env }) => ({
 > (1) Pour `dateConfiguration`, see [Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
 >
 > (2) pour `instances.headers`, see [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+
+#### II. server.js
+
+Enabled internal Strapi CRON
+
+```js
+// ./config/server.js
+module.exports = ({ env }) => ({
+  // ...
+  cron: {
+    enabled: true,
+  },
+  // ...
+});
+```
 
 ## 2. Utilisation
 
