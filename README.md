@@ -4,12 +4,12 @@ A quick description of `nova-publisher` made by [NovaGaïa](https://novagaia.fr/
 
 > View on [Strapi Marketplace](https://market.strapi.io/plugins/@novagaia-nova-publisher)
 
-Ce plugin fait plusieurs choses :
+This plugin does several things:
 
-1. Publication flexible, une URL, en POST ou GET, avec ou sans headers ;
-2. Permet de publier sur plusieurs instances (Prod, Preview, etc.) ;
-3. Ajoute un composant de publication pour surcharger la gestion des états de Strapi, utile avec le CRON notamment (pas d'obligation d'utilisation) ;
-4. Active un cron qui mettra à jour les instances actives et nécessitant un rebuild chaque jour à 1h du matin (pas d'obligation d'utilisation).
+1. Flexible publishing, a URL, in POST or GET, with or without headers ;
+2. Allows you to publish to multiple instances (Prod, Preview, etc.);
+3. Adds a publishing component to override Strapi's state management, useful with CRON in particular (no obligation to use);
+4. Activate a cron that will update the active instances that need to be rebuilt every day at 1am (no obligation to use).
 
 ## 1. Installation
 
@@ -29,9 +29,9 @@ yarn add nova-publisher
 
 ### b. Configuration
 
-La configuration se fait dans les variables d'environnement et dans la configuration du plugin.
+The configuration is done in the environment variables and in the plugin configuration.
 
-> Ici il y a deux instances de configurées, mais vous pouvez en ajouter d'autres ou n'en mettre qu'une seule.
+> Here there are two instances configured, but you can add more or put only one.
 
 ```js
 // ./config/plugins.js
@@ -84,19 +84,19 @@ module.exports = ({ env }) => ({
 });
 ```
 
-| Variable                             | Description                                                           | Type    | Default value                                                         |
-| ------------------------------------ | --------------------------------------------------------------------- | ------- | --------------------------------------------------------------------- |
-| `dateConfiguration`                  | Configuration du format de la date dans les messages, see (1).        | Object  | (See below)                                                           |
-| `dateConfiguration.dateLocaleString` | Locale à utiliser, see (1)                                            | String  | `en-EN`                                                               |
-| `dateConfiguration.options`          | Options du formatage de date, see (1)                                 | Object  | `{ timeZone: 'Europe/London', timeZoneName: 'short', hour12: false }` |
-| `addPublishComponent`                | Ajoute le composant helper pour gérer plus finement les publications. | Boolean | `false`                                                               |
-| `instances`                          | Configuration des instances où lancer la publication.                 | Object  | (See below)                                                           |
-| `instances.name` \*                  | Nom de l'intance.                                                     | String  | Mandatory                                                             |
-| `instances.icon` \*                  | Emoji.                                                                | String  | Mandatory                                                             |
-| `instances.enabled` \*               | Active ou non l'instance.                                             | Boolean | Mandatory                                                             |
-| `instances.url` \*                   | Url cible.                                                            | String  | Mandatory                                                             |
-| `instances.method`                   | `POST` ou `GET`.                                                      | String  | `POST`                                                                |
-| `instances.headers`                  | Headers à envoyer, see (2).                                           | Object  | -                                                                     |
+| Variable                             | Description                                                       | Type    | Default value                                                         |
+| ------------------------------------ | ----------------------------------------------------------------- | ------- | --------------------------------------------------------------------- |
+| `dateConfiguration`                  | Configuration of the date format in the messages, see (1).        | Object  | (See below)                                                           |
+| `dateConfiguration.dateLocaleString` | Date local to use, see (1)                                        | String  | `en-EN`                                                               |
+| `dateConfiguration.options`          | Date formatting options, see (1)                                  | Object  | `{ timeZone: 'Europe/London', timeZoneName: 'short', hour12: false }` |
+| `addPublishComponent`                | Adds the helper component to manage more finely the publications. | Boolean | `false`                                                               |
+| `instances`                          | Configuration of the instances where to launch the publication.   | Object  | (See below)                                                           |
+| `instances.name` \*                  | Name of the intance.                                              | String  | Mandatory                                                             |
+| `instances.icon` \*                  | Emoji.                                                            | String  | Mandatory                                                             |
+| `instances.enabled` \*               | Enables or disables the display of the instance.                  | Boolean | Mandatory                                                             |
+| `instances.url` \*                   | Target url.                                                       | String  | Mandatory                                                             |
+| `instances.method`                   | `POST` ou `GET`.                                                  | String  | `POST`                                                                |
+| `instances.headers`                  | Headers to send, see (2).                                         | Object  | -                                                                     |
 
 \* **Mandatory field**
 
@@ -109,29 +109,29 @@ module.exports = ({ env }) => ({
 ![preview](./docs/cap1.png)
 
 > **Warning**
-> Avant toute utilisation, l'`Etat de publication` affiche un message générique.
+> Before any use, the `Publication Status' displays a generic message.
 
 > **Note**
-> Le message d'`Etat de publication` n'est pas stocké en base (au cas où celle-ci serait recopiée sur d'autres instances), mais dans un fichier sous `./public/status-${instances[id].name}.txt`
+> The `Publication Status' message is not stored in the database (in case it is copied to other instances), but in a file under `./public/status-${instances[id].name}.txt`.
 
-Si plusieurs instances sont configurées, le bloc se répète.
+If several instances are configured, the block is repeated.
 
-`Publication automatique activée` indique si le CRON est activé pour cette instance, see `instances.enabled`.
+Auto-publish enabled`indicates whether CRON is enabled for this instance, see`instances.enabled`.
 
-### Publier
+### Publish
 
-Cliquez sur `Publier` pour déclancher l'action.
+Click on `Publish` to initiate the action.
 
-- Le bouton est désactivé en attandant (si vous rafraichissez la page, le bouton sera de nouveau actif).
-- `Etat de publication` affiche Build started at `<date>`
-- Au retour de l'action, le bouton se réactive.
+- The button is disabled while waiting (if you refresh the page, the button will be enabled again).
+- The `Publish Status` displays Build started at `<date>`.
+- When the action returns, the button is reactivated.
 
-### Gestion des retours
+### Return management
 
-Lors du retour de l'action, l'`Etat de publication` sera mis à jour avec un message de réussite ou d'erreur et l'heure.
+When the action returns, the `Publish Status` will be updated with a success or error message and the time.
 
-- `Publication en cours`: Build started at `<date>`
-- `Success`: Last build with success at `<date>`
-- `Error`: Last build in error at `<date>`
+- Release in progress: Build started at `<date>`.
+- Success: Last build with success at `<date>`.
+- Error: Last build in error at `<date>`.
 
-En cas d'erreur, un `Toast` s'affiche avec le message d'erreur retourné par le serveur distant, que vous pourrez retrouver dans les logs du serveur Strapi.
+In case of an error, a `Toast` is displayed with the error message returned by the remote server, which you can find in the Strapi server logs.
