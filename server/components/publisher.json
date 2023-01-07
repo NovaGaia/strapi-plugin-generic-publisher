@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_publish_panels",
+  "info": {
+    "displayName": "Publish Panel",
+    "icon": "calendar-check"
+  },
+  "options": {},
+  "attributes": {
+    "state": {
+      "type": "enumeration",
+      "enum": ["Draft", "Published"],
+      "default": "Draft",
+      "required": true
+    },
+    "publishAt": {
+      "type": "datetime"
+    },
+    "unPublishAt": {
+      "type": "datetime"
+    }
+  }
+}

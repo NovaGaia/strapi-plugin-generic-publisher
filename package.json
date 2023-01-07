@@ -1,0 +1,25 @@
+{
+  "name": "strapi-plugin-generic-publisher",
+  "version": "0.0.0",
+  "description": "Plugin dedicated to call multiple webhooks for publishing actions.",
+  "strapi": {
+    "name": "strapi-plugin-generic-publisher",
+    "description": "Plugin dedicated to call multiple webhooks for publishing actions.",
+    "kind": "plugin",
+    "displayName": "Nova Publisher"
+  },
+  "dependencies": {},
+  "author": {
+    "name": "NovaGaïa"
+  },
+  "maintainers": [
+    {
+      "name": "NovaGaïa"
+    }
+  ],
+  "engines": {
+    "node": ">=14.19.1 <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
