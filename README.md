@@ -1,6 +1,8 @@
-# Strapi plugin strapi-plugin-generic-publisher aka Nova Publisher
+# Strapi plugin Nova Publisher
 
-A quick description of strapi-plugin-generic-publisher made by [NovaGaïa](https://novagaia.fr/).
+> aka Nova Publisher
+
+A quick description of nova-publisher made by [NovaGaïa](https://novagaia.fr/).
 
 Ce plugin fait plusieurs choses :
 
@@ -23,7 +25,7 @@ La configuration se fait dans les variables d'environnement et dans la configura
 
 module.exports = ({ env }) => ({
   // ...
-  'strapi-plugin-generic-publisher': {
+  'nova-publisher': {
     enabled: true,
     config: {
       dateConfiguration: {
@@ -85,6 +87,7 @@ module.exports = ({ env }) => ({
 \* Mandatory field
 
 > (1) Pour `dateConfiguration`, see [Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
+>
 > (2) pour `instances.headers`, see [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
 
 ### b. Utilisation

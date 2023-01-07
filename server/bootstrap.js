@@ -7,13 +7,13 @@ const RBAC_ACTIONS = [
     section: 'plugins',
     displayName: 'Access',
     uid: 'access',
-    pluginName: 'strapi-plugin-generic-publisher',
+    pluginName: 'nova-publisher',
   },
   {
     section: 'plugins',
     displayName: 'Publish',
     uid: 'publish',
-    pluginName: 'strapi-plugin-generic-publisher',
+    pluginName: 'nova-publisher',
   },
 ];
 module.exports = async ({ strapi }) => {

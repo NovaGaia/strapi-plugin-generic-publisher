@@ -17,7 +17,7 @@ module.exports = {
       '0 1 * * *': async ({ strapi }) => {
         let instances = [];
         await strapi
-          .plugin('strapi-plugin-generic-publisher')
+          .plugin('nova-publisher')
           .service('publisher')
           .getInstances()
           .then((res) => {
@@ -27,7 +27,7 @@ module.exports = {
                 console.log(`Build lanched by CRON on ${instance.name} ⌛`);
                 try {
                   strapi
-                    .plugin('strapi-plugin-generic-publisher')
+                    .plugin('nova-publisher')
                     .service('publisher')
                     .publish(instance.id)
                     .then((res) => {

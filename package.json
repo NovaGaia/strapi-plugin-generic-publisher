@@ -1,14 +1,18 @@
 {
-  "name": "strapi-plugin-generic-publisher",
+  "name": "@novagaia/nova-publisher",
   "version": "0.0.0",
   "description": "Plugin dedicated to call multiple webhooks for publishing actions.",
   "strapi": {
-    "name": "strapi-plugin-generic-publisher",
+    "name": "nova-publisher",
     "description": "Plugin dedicated to call multiple webhooks for publishing actions.",
     "kind": "plugin",
     "displayName": "Nova Publisher"
   },
-  "dependencies": {},
+  "private": false,
+  "keywords": [
+    "strapi",
+    "publish"
+  ],
   "author": {
     "name": "NovaGaïa"
   },
@@ -17,9 +21,27 @@
       "name": "NovaGaïa"
     }
   ],
+  "files": [
+    "admin",
+    "server",
+    "strapi-admin.js",
+    "strapi-server.js"
+  ],
+  "homepage": "https://market.strapi.io/plugins/@novagaia-nova-publisher",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NovaGaia/nova-publisher.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no tests specified\" && exit 1"
+  },
   "engines": {
-    "node": ">=14.19.1 <=16.x.x",
+    "node": ">=14.19.1 <=18.x.x",
     "npm": ">=6.0.0"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "@strapi/strapi": "^4.0.0"
   },
   "license": "MIT"
 }

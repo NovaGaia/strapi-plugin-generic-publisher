@@ -68,7 +68,6 @@ module.exports = ({ strapi }) => {
           const { stdout, stderr } = await exec(
             `cat ./public/status-${instances[id].name}.txt`
           );
-          console.log(stdout);
           if (stdout) {
             const responseObj = {
               status: stdout,

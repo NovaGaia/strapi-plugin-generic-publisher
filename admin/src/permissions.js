@@ -1,11 +1,9 @@
 const pluginPermissions = {
   // Roles
-  access: [
-    { action: 'plugin::strapi-plugin-generic-publisher.access', subject: null },
-  ],
+  access: [{ action: 'plugin::nova-publisher.access', subject: null }],
   publish: [
     {
-      action: 'plugin::strapi-plugin-generic-publisher.publish',
+      action: 'plugin::nova-publisher.publish',
       subject: null,
     },
   ],
