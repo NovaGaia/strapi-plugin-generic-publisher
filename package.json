@@ -1,5 +1,5 @@
 {
-  "name": "@novagaia/nova-publisher",
+  "name": "nova-publisher",
   "version": "0.0.0",
   "description": "Plugin dedicated to call multiple webhooks for publishing actions.",
   "strapi": {

@@ -18,13 +18,13 @@ Ce plugin fait plusieurs choses :
 Copy the following code and run from your terminal
 
 ```
-npm i @novagaia/nova-publisher
+npm i nova-publisher
 ```
 
 or
 
 ```
-yarn add @novagaia/nova-publisher
+yarn add nova-publisher
 ```
 
 ### b. Configuration
