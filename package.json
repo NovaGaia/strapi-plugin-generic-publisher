@@ -11,14 +11,19 @@
   "private": false,
   "keywords": [
     "strapi",
-    "publish"
+    "publish",
+    "multiple targets"
   ],
   "author": {
-    "name": "NovaGaïa"
+    "name": "NovaGaïa",
+    "email": "contact@novagaia.fr",
+    "url": "http://novagaia.fr"
   },
   "maintainers": [
     {
-      "name": "NovaGaïa"
+      "name": "NovaGaïa",
+      "email": "contact@novagaia.fr",
+      "url": "http://novagaia.fr"
     }
   ],
   "files": [
@@ -28,11 +33,13 @@
     "strapi-server.js"
   ],
   "homepage": "https://market.strapi.io/plugins/@novagaia-nova-publisher",
+  "bugs": "https://github.com/NovaGaia/nova-publisher/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/NovaGaia/nova-publisher.git"
   },
   "scripts": {
+    "release": "release-it",
     "test": "echo \"Error: no tests specified\" && exit 1"
   },
   "engines": {
@@ -42,6 +49,9 @@
   "dependencies": {},
   "peerDependencies": {
     "@strapi/strapi": "^4.0.0"
+  },
+  "devDependencies": {
+    "release-it": "*"
   },
   "license": "MIT"
 }
