@@ -33,10 +33,10 @@
     "strapi-server.js"
   ],
   "homepage": "https://market.strapi.io/plugins/nova-publisher",
-  "bugs": "https://github.com/NovaGaia/nova-publisher/issues",
+  "bugs": "https://github.com/NovaGaia/strapi-plugin-generic-publisher/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NovaGaia/nova-publisher.git"
+    "url": "https://github.com/NovaGaia/strapi-plugin-generic-publisher.git"
   },
   "scripts": {
     "release": "release-it",
