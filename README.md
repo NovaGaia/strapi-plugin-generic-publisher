@@ -2,7 +2,7 @@
 
 A quick description of `nova-publisher` made by [NovaGaïa](https://novagaia.fr/).
 
-> View on [Strapi Marketplace](https://market.strapi.io/plugins/@novagaia-nova-publisher)
+> View on [Strapi Marketplace](https://market.strapi.io/plugins/nova-publisher)
 
 This plugin does several things:
 

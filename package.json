@@ -32,7 +32,7 @@
     "strapi-admin.js",
     "strapi-server.js"
   ],
-  "homepage": "https://market.strapi.io/plugins/@novagaia-nova-publisher",
+  "homepage": "https://market.strapi.io/plugins/nova-publisher",
   "bugs": "https://github.com/NovaGaia/nova-publisher/issues",
   "repository": {
     "type": "git",
