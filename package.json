@@ -1,6 +1,6 @@
 {
   "name": "nova-publisher",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Plugin dedicated to call multiple webhooks for publishing actions.",
   "strapi": {
     "name": "nova-publisher",
