@@ -99,7 +99,7 @@ module.exports = ({ env }) => ({
 | `instances.icon` \*                  | Emoji.                                                            | String  | Mandatory                                                             |
 | `instances.enabled` \*               | Enables or disables the display of the instance.                  | Boolean | Mandatory                                                             |
 | `instances.url` \*                   | Target publish url.                                               | String  | Mandatory                                                             |
-| `instances.web_url` \*               | URL of your instance to open it from Nova-Publisher page.         | String  | -                                                                     |
+| `instances.web_url`                  | URL of your instance to open it from Nova-Publisher page.         | String  | -                                                                     |
 | `instances.method`                   | `POST` ou `GET`.                                                  | String  | `POST`                                                                |
 | `instances.headers`                  | Headers to send, see (2).                                         | Object  | -                                                                     |
 
