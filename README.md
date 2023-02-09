@@ -61,6 +61,7 @@ module.exports = ({ env }) => ({
           enabled: env('INSTANCE_0_ENABLED'),
           cron: env('INSTANCE_0_USE_CRON'),
           url: env('INSTANCE_0_URL'),
+          web_url: env('INSTANCE_0_WEB_URL'),
           method: 'post',
           headers: {
             // sample
@@ -73,6 +74,7 @@ module.exports = ({ env }) => ({
           enabled: env('INSTANCE_1_ENABLED'),
           cron: env('INSTANCE_1_USE_CRON'),
           url: env('INSTANCE_1_URL'),
+          web_url: env('INSTANCE_1_WEB_URL'),
           method: 'post',
           headers: {
             // sample
@@ -96,7 +98,8 @@ module.exports = ({ env }) => ({
 | `instances.name` \*                  | Name of the intance.                                              | String  | Mandatory                                                             |
 | `instances.icon` \*                  | Emoji.                                                            | String  | Mandatory                                                             |
 | `instances.enabled` \*               | Enables or disables the display of the instance.                  | Boolean | Mandatory                                                             |
-| `instances.url` \*                   | Target url.                                                       | String  | Mandatory                                                             |
+| `instances.url` \*                   | Target publish url.                                               | String  | Mandatory                                                             |
+| `instances.web_url` \*               | URL of your instance to open it from Nova-Publisher page.         | String  | -                                                                     |
 | `instances.method`                   | `POST` ou `GET`.                                                  | String  | `POST`                                                                |
 | `instances.headers`                  | Headers to send, see (2).                                         | Object  | -                                                                     |
 

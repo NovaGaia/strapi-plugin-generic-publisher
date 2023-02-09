@@ -1,4 +1,4 @@
-import { BaseHeaderLayout, ContentLayout } from "@strapi/design-system/Layout";
+import { BaseHeaderLayout, ContentLayout } from '@strapi/design-system/Layout';
 import {
   Box,
   Button,
@@ -7,25 +7,26 @@ import {
   EmptyStateLayout,
   Flex,
   Icon,
+  Link,
   Stack,
   Typography,
-} from "@strapi/design-system";
+} from '@strapi/design-system';
 import {
   CheckPermissions,
   LoadingIndicatorPage,
   useNotification,
-} from "@strapi/helper-plugin";
-import React, { useCallback, useEffect, useState } from "react";
+} from '@strapi/helper-plugin';
+import React, { useCallback, useEffect, useState } from 'react';
 
-import Write from "@strapi/icons/Write";
-import permissions from "../../permissions";
-import publisher from "../../api/publisher";
+import Write from '@strapi/icons/Write';
+import permissions from '../../permissions';
+import publisher from '../../api/publisher';
 
 export const InstanceCard = ({ datas }) => {
-  const { name, icon, cron, id } = datas;
+  const { name, icon, cron, id, web_url } = datas;
   const toggleNotification = useNotification();
   const [isPublishing, setIsPublishing] = useState(false);
-  const [value, setValue] = useState("never runned");
+  const [value, setValue] = useState('never runned');
 
   const formatDate = (value) => {
     if (!!!_.isDate(value)) {
@@ -40,11 +41,11 @@ export const InstanceCard = ({ datas }) => {
 
   const now = () => {
     const options = {
-      timeZone: "Europe/Paris",
-      timeZoneName: "short",
+      timeZone: 'Europe/Paris',
+      timeZoneName: 'short',
       hour12: false,
     };
-    return new Date().toLocaleString("fr-FR", options);
+    return new Date().toLocaleString('fr-FR', options);
   };
 
   useEffect(() => {
@@ -54,7 +55,7 @@ export const InstanceCard = ({ datas }) => {
   const checkLastBuild = async () => {
     publisher.check(id).then((res) => {
       if (res.data === undefined) {
-        setValue("Never runned");
+        setValue('Never runned');
       } else {
         setValue(res.data.status);
       }
@@ -69,12 +70,12 @@ export const InstanceCard = ({ datas }) => {
     setIsPublishing(false);
     if (res.data.response) {
       toggleNotification({
-        type: "success",
-        message: "Publication achevée.",
+        type: 'success',
+        message: 'Publication achevée.',
       });
     } else {
       toggleNotification({
-        type: "warning",
+        type: 'warning',
         message: res.data.error,
       });
     }
@@ -82,17 +83,25 @@ export const InstanceCard = ({ datas }) => {
 
   return (
     <Box
-      background="neutral0"
+      background='neutral0'
       hasRadius={true}
-      shadow="filterShadow"
-      width="100%"
+      shadow='filterShadow'
+      width='100%'
     >
-      <Flex padding={4} direction="column" alignItems="start" gap={4}>
-        <Typography variant="alpha">
-          Instance : {name} {icon}
-        </Typography>
+      <Flex padding={4} direction='column' alignItems='start' gap={4}>
+        {web_url ? (
+          <Link href={web_url} target='_blank'>
+            <Typography variant='alpha'>
+              Instance : {name} {icon}
+            </Typography>
+          </Link>
+        ) : (
+          <Typography variant='alpha'>
+            Instance : {name} {icon}
+          </Typography>
+        )}
         <Typography>
-          Publication automatique activée : {cron === true ? "✅" : "🚫"}
+          Publication automatique activée : {cron === true ? '✅' : '🚫'}
         </Typography>
         <Typography>
           {_.isDate(value) ? (
@@ -107,7 +116,7 @@ export const InstanceCard = ({ datas }) => {
         </Typography>
         <CheckPermissions permissions={permissions.publish}>
           <Button
-            size="S"
+            size='S'
             endIcon={<Write />}
             onClick={handleSubmit}
             disabled={isPublishing}
