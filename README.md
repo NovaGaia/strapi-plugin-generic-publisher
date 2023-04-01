@@ -1,6 +1,10 @@
-# Strapi plugin Nova Publisher
+<div align="center">
+  <img style="width: 160px; height: auto;" src="https://avatars.githubusercontent.com/u/84325618?s=200&v=4" alt="Logo NovaGaïa" />
+  <h1>Strapi plugin Nova Publisher</h1>
+  <p>by <a href="https://novagaia.fr/" target="_blank">NovaGaïa</a>.</p>
+  <p><strong>Plugin dedicated to call multiple webhooks for publishing actions.</strong></p>
 
-A quick description of `nova-publisher` made by [NovaGaïa](https://novagaia.fr/).
+</div>
 
 > View on [Strapi Marketplace](https://market.strapi.io/plugins/nova-publisher)
 
@@ -126,7 +130,7 @@ module.exports = ({ env }) => ({
 
 ## 2. Utilisation
 
-![preview](./docs/cap1.png)
+![preview](https://github.com/NovaGaia/strapi-plugin-generic-publisher/blob/main/docs/cap1.png?raw=true)
 
 > **Warning**
 > Before any use, the `Publication Status' displays a generic message.
