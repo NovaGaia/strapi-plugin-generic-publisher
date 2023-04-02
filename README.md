@@ -1,5 +1,5 @@
 <div align="center">
-  <img style="width: 160px; height: auto;" src="https://avatars.githubusercontent.com/u/84325618?s=200&v=4" alt="Logo NovaGaïa" />
+  <img style="width: 160px; height: auto;" src="./docs/logo-novagaia@3x.png" alt="Logo NovaGaïa" />
   <h1>Strapi plugin Nova Publisher</h1>
   <p>by <a href="https://novagaia.fr/" target="_blank">NovaGaïa</a>.</p>
   <p><strong>Plugin dedicated to call multiple webhooks for publishing actions.</strong></p>
