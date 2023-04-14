@@ -46,7 +46,9 @@
     "node": ">=14.19.1 <=18.x.x",
     "npm": ">=6.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
   "peerDependencies": {
     "@strapi/strapi": "^4.0.0"
   },

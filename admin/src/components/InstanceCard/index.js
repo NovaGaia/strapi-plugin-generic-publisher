@@ -1,24 +1,10 @@
 import { BaseHeaderLayout, ContentLayout } from '@strapi/design-system/Layout';
-import {
-  Box,
-  Button,
-  Checkbox,
-  Divider,
-  EmptyStateLayout,
-  Flex,
-  Icon,
-  Link,
-  Stack,
-  Typography,
-} from '@strapi/design-system';
-import {
-  CheckPermissions,
-  LoadingIndicatorPage,
-  useNotification,
-} from '@strapi/helper-plugin';
+import { Box, Button, Flex, Link, Typography } from '@strapi/design-system';
+import { CheckPermissions, useNotification } from '@strapi/helper-plugin';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import Write from '@strapi/icons/Write';
+import _ from 'lodash';
 import permissions from '../../permissions';
 import publisher from '../../api/publisher';
 
@@ -33,9 +19,7 @@ export const InstanceCard = ({ datas }) => {
       return value;
     }
     value
-      ? `${new Date(value).toLocaleDateString()} à ${new Date(
-          value
-        ).toLocaleTimeString()}`
+      ? `${new Date(value).toLocaleDateString()} à ${new Date(value).toLocaleTimeString()}`
       : null;
   };
 
@@ -82,27 +66,20 @@ export const InstanceCard = ({ datas }) => {
   }, [setIsPublishing, checkLastBuild]);
 
   return (
-    <Box
-      background='neutral0'
-      hasRadius={true}
-      shadow='filterShadow'
-      width='100%'
-    >
-      <Flex padding={4} direction='column' alignItems='start' gap={4}>
+    <Box background="neutral0" hasRadius={true} shadow="filterShadow" width="100%">
+      <Flex padding={4} direction="column" alignItems="start" gap={4}>
         {web_url ? (
-          <Link href={web_url} target='_blank'>
-            <Typography variant='alpha'>
+          <Link href={web_url} target="_blank">
+            <Typography variant="alpha">
               Instance : {name} {icon}
             </Typography>
           </Link>
         ) : (
-          <Typography variant='alpha'>
+          <Typography variant="alpha">
             Instance : {name} {icon}
           </Typography>
         )}
-        <Typography>
-          Publication automatique activée : {cron === true ? '✅' : '🚫'}
-        </Typography>
+        <Typography>Publication automatique activée : {cron === true ? '✅' : '🚫'}</Typography>
         <Typography>
           {_.isDate(value) ? (
             <>
@@ -116,7 +93,7 @@ export const InstanceCard = ({ datas }) => {
         </Typography>
         <CheckPermissions permissions={permissions.publish}>
           <Button
-            size='S'
+            size="S"
             endIcon={<Write />}
             onClick={handleSubmit}
             disabled={isPublishing}
