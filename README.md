@@ -159,3 +159,7 @@ When the action returns, the `Publish Status` will be updated with a success or 
 - Error: Last build in error at `<date>`.
 
 In case of an error, a `Toast` is displayed with the error message returned by the remote server, which you can find in the Strapi server logs.
+
+---
+
+<a href="https://www.buymeacoffee.com/renaudheluin" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
