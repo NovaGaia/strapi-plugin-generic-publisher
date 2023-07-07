@@ -98,8 +98,8 @@ module.exports = ({ strapi }) => {
             method: instances[id].method || 'post',
             url: instances[id].url,
           };
-          if (instances[id].header) {
-            config.headers = instances[id].header;
+          if (instances[id].headers) {
+            config.headers = instances[id].headers;
           }
           const response = await axios(config);
           if (response.data.error === undefined) {
