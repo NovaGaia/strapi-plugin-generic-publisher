@@ -65,9 +65,7 @@ module.exports = ({ strapi }) => {
       const { instances } = pluginConfig;
       try {
         if (checkPluginConfig(instances, id)) {
-          const { stdout, stderr } = await exec(
-            `cat ./public/status-${instances[id].name}.txt`
-          );
+          const { stdout, stderr } = await exec(`cat ./public/status-${instances[id].name}.txt`);
           if (stdout) {
             const responseObj = {
               status: stdout,
@@ -94,30 +92,28 @@ module.exports = ({ strapi }) => {
         const { instances } = pluginConfig;
         if (checkPluginConfig(instances, id)) {
           exec(
-            `echo Build started at ${now(pluginConfig)} > ./public/status-${
-              instances[id].name
-            }.txt`
+            `echo Build started at ${now(pluginConfig)} > ./public/status-${instances[id].name}.txt`
           );
           const config = {
             method: instances[id].method || 'post',
             url: instances[id].url,
           };
           if (instances[id].header) {
-            config.headers = instances[id].headers;
+            config.headers = instances[id].header;
           }
           const response = await axios(config);
           if (response.data.error === undefined) {
             exec(
-              `echo Last build with success at ${now(
-                pluginConfig
-              )} > ./public/status-${instances[id].name}.txt`
+              `echo Last build with success at ${now(pluginConfig)} > ./public/status-${
+                instances[id].name
+              }.txt`
             );
             return { response: true };
           } else {
             exec(
-              `echo Last build in error at ${now(
-                pluginConfig
-              )} > ./public/status-${instances[id].name}.txt`
+              `echo Last build in error at ${now(pluginConfig)} > ./public/status-${
+                instances[id].name
+              }.txt`
             );
             console.error(response.data.error);
             return { response: false, error: response.data.error };
